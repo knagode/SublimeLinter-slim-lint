@@ -17,7 +17,7 @@ from SublimeLinter.lint import RubyLinter
 class SlimLint(RubyLinter):
     """Provides an interface to slim-lint."""
 
-    syntax = 'ruby slim'
+    #syntax = 'ruby slim'
     cmd = None
     tempfile_suffix = '.slim'
 
@@ -32,10 +32,7 @@ class SlimLint(RubyLinter):
     )
 
     defaults = {
-        '--config': '${folder}/.slim-lint.yml',
-        'env': {
-           'SLIM_LINT_RUBOCOP_CONF': '${folder}/.rubocop.yml'
-        }
+        'selector': 'source.slim'
     }
 
     def cmd(self):
