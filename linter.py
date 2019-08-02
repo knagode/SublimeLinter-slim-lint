@@ -32,7 +32,11 @@ class SlimLint(RubyLinter):
     )
 
     defaults = {
-        'selector': 'source.slim'
+        'selector': 'source.slim',
+        '--config': '${folder}/.slim-lint.yml',
+        'env': {  
+           'SLIM_LINT_RUBOCOP_CONF': '${folder}/.rubocop.yml' 
+        }
     }
 
     def cmd(self):
